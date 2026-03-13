@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    color: $color-dark-blue;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+main {
+    overflow: hidden;
+}
+
+section {
+    position: relative;
+}
+
+a,
+button,
+summary {
+    transition: all 0.3s ease;
+}
