@@ -1,6 +1,8 @@
+import { hambugerMenu } from "./modules/hambuger_menu.js";
 import { Counter } from "./modules/counter.js";
 import { StepCounter } from "./modules/counter.js";
 
+hambugerMenu();
 const counter1 = new Counter("#counter-container1", 0);
 const counter2 = new Counter("#counter-container2", 6);
 const counter3 = new Counter("#counter-container3", 8);
