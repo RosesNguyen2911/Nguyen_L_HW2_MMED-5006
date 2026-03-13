@@ -15,4 +15,9 @@ button {
   background-color: cadetblue;
   color: #fff;
   letter-spacing: 1px;
+}
+
+.inactive {
+  opacity: 0.45;
+  cursor: not-allowed;
 }/*# sourceMappingURL=main.css.map */
