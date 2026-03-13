@@ -55,10 +55,12 @@ export class Counter {
 
 
     update() {
-        //set initial display content
+        //Set initial display content
         this.display.textContent = `Count: ${this.count}`;
 
-        //classList.toggle() this.count===0
+        // When the count is 0, decrement and reset should appear inactive
+        this.decrementButton.classList.toggle("inactive", this.count === 0);
+        this.resetButton.classList.toggle("inactive", this.count === 0);
     }
 }
 
