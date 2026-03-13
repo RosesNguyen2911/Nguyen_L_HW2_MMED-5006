@@ -41,11 +41,12 @@ export class Counter {
         this.update();
     }
 
-    decrement () {
+    decrement() {
         if (this.count > 0) {
             this.count--;
-            this.update();
         }
+    
+        this.update();
     }
 
     reset(){
