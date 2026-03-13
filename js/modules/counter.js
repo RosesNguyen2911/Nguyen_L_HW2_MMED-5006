@@ -1,6 +1,6 @@
 export class Counter {
     constructor(selector, initialValue = 0) {
-        this .count = initialValue;
+        this.count = initialValue;
         this.selector = selector;
         this.mount();
     }
@@ -8,24 +8,28 @@ export class Counter {
     mount() {
         const container = document.querySelector(this.selector);
 
+        //Add increment, decrement, reset buttons
         this.display = document.createElement("div");
-        this.button = document.createElement("button");
+        this.incrementButton = document.createElement("button");
+        this.decrementButton = document.createElement("button");
+        this.resetButton = document.createElement("button");
 
-        //Add Buttons, decrement, reset
-        this.button.textContent = "Decrement"
-        this.button.textContent = "Reset"
-
-        //set button text
-        this.button.textContent = "Increment";
+        //Set button text
+        this.incrementButton.textContent = "Increment";
+        this.decrementButton.textContent = "Decrement";
+        this.resetButton.textContent = "Reset";
 
         //Append display and button into the container div
         container.appendChild(this.display);
-        container.appendChild(this.button);
+        container.appendChild(this.incrementButton);
+        container.appendChild(this.decrementButton);
+        container.appendChild(this.resetButton);
 
         //Add Event Listener
-        this.button.addEventListener("click", ()=> this.increment());
-        this.button.addEventListener("click", ()=> this.decrement());
-        this.button.addEventListener("click", ()=> this.reset());
+        this.incrementButton.addEventListener("click", ()=> this.increment());
+        this.decrementButton.addEventListener("click", ()=> this.decrement());
+        this.resetButton.addEventListener("click", ()=> this.reset());
+
     
         // when this first gets mounted update the display
         this.update();
