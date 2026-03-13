@@ -119,18 +119,6 @@ function animateExampleCards() {
     });
 }
 
-function animateFooter() {
-    gsap.from(footerSection, {
-        scrollTrigger: {
-            trigger: footerSection,
-            start: "top 85%"
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.8
-    });
-}
-
 function runHeroAnimations() {
     animateHeroEyebrow();
     animateHeroTitle();
@@ -144,7 +132,6 @@ function runScrollAnimations() {
     animateOverviewParagraphs();
     animateDocumentationBlocks();
     animateExampleCards();
-    animateFooter();
 }
 
 function initGsapAnimations() {
