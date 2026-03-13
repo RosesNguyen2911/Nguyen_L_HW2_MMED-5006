@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+.content-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 0.85rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    background-color: rgba(239, 165, 0, 0.13);
+    color: $color-yellow;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.content-section h2 {
+    margin-bottom: 1rem;
+    color: $color-dark-blue;
+    font-size: 1.9rem;
+    line-height: 1.2;
+}
+
+.content-section p {
+    margin-bottom: 1rem;
+    color: #384056;
+    line-height: 1.85;
+}
+
+.content-section strong {
+    color: $color-dark-blue;
+}
+
+.content-section code {
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.35rem;
+    background-color: rgba(67, 190, 229, 0.1);
+    color: $color-red;
+}
+
+.overview-subheading {
+    margin-top: 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .overview-subheading {
+        margin-top: 0;
+    }
+}
