@@ -35,21 +35,22 @@ export class Counter {
         this.update();
     }
 
-    //state methods
+    //State methods
     increment(){
         this.count++;
         this.update();
     }
 
-    decrement(){
-        //if statement needed - not to count negatively
-        this.count--;
-        this.update();
+    decrement () {
+        if (this.count > 0) {
+            this.count--;
+            this.update();
+        }
     }
 
     reset(){
         this.count=0;
-        this.update
+        this.update();
     }
 
 
