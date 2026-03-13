@@ -1,8 +1,11 @@
 import { hambugerMenu } from "./modules/hambuger_menu.js";
 import { Counter } from "./modules/counter.js";
 import { StepCounter } from "./modules/counter.js";
+import { gsapAnimation } from "./modules/gsap_animation.js";
+
 
 hambugerMenu();
+gsapAnimation();
 const counter1 = new Counter("#counter-container1", 0);
 const counter2 = new Counter("#counter-container2", 6);
 const counter3 = new Counter("#counter-container3", 8);
