@@ -50,7 +50,7 @@ export class Counter {
     }
 
     reset(){
-        this.count=0;
+        this.count = 0;
         this.update();
     }
 
@@ -67,12 +67,34 @@ export class Counter {
 
 //Counter is supper class
 // StepCounter is sub class
-class StepCounter extends Counter {
-    constructor(selector, initialValue = 0, step = 1){
+export class StepCounter extends Counter {
+
+    constructor(selector, initialValue = 0, step = 1) {
         super(selector, initialValue);
-        // add step property
-        //this.step = step;
+
+        // step belongs to this object, so it is stored as a property
+        this.step = step;
     }
-    //increment(){}
-    //decrement(){}
+
+    increment() {
+        // increase by the step value instead of 1
+        this.count += this.step;
+
+        this.update();
+    }
+
+    decrement() {
+
+        if (this.count > 0) {
+            this.count -= this.step;
+        }
+
+        // if step is larger than the remaining count,
+        // clamp the value so the counter never goes below 0
+        if (this.count < 0) {
+            this.count = 0;
+        }
+
+        this.update();
+    }
 }
