@@ -4,18 +4,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>OOP Counter</title>
+    <title>OOP Counter Documentation</title>
+
     <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7COpen+Sans" rel="stylesheet" type="text/css">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+
     <script type="module" defer src="js/main.js"></script>
 </head>
 
 <body>
-    <div class="grid-con">
-        <div id="counter-container1" class="counter col-span-full m-col-span-6"></div>
-        <div id="counter-container2" class="counter col-span-full m-col-span-6"></div>
-        <div id="counterCon" class="counter col-span-full m-col-span-6"></div>
-    </div>
+    <!--HEADER-->
+    <header class="site-header">
+        <div class="grid-con">
+            <div class="col-span-3 m-col-span-4 l-col-span-3">
+                <a href="./" class="site-branding" aria-label="Go to homepage">
+                    <div class="logo-slot" aria-label="Counter logo">
+                        <img src="images/counter_logo.svg" alt="Counter Logo">
+                    </div>
+                </a>
+            </div>
+    
+             <!--MOBILE HAMBUGER MENU-->
+            <div class="col-start-4 col-span-1 site-nav-mobile">
+                <details class="mobile-menu" id="mobile-menu">
+                    <summary aria-label="Open navigation menu">
+                        <span class="hamburger-lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </summary>
+    
+                    <div class="mobile-menu-overlay">
+                        <nav aria-label="Mobile navigation">
+                            <ul class="mobile-nav-list">
+                                <li><a href="#overview" class="mobile-nav-link">Overview</a></li>
+                                <li><a href="#how-to-use" class="mobile-nav-link">How To Use It</a></li>
+                                <li><a href="#examples" class="mobile-nav-link">Examples</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </details>
+            </div>
+    
+              <!--DESKTOP & TABLET NAVIGATION-->
+            <div class="hidden m-col-span-8 l-col-span-9 site-nav-desktop">
+                <nav aria-label="Primary navigation">
+                    <ul class="nav-list">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#how-to-use">How To Use It</a></li>
+                        <li><a href="#examples">Examples</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+         <!--HERO-->
+        <section class="hero-section">
+            <div class="grid-con">
+                <div class="col-span-full m-col-span-12 l-col-span-7">
+                    <p class="eyebrow">JavaScript OOP Component</p>
+                    <h1>Reusable Counter with State-Driven UI</h1>
+                    <p class="hero-copy">
+                        This project demonstrates a reusable counter component built with JavaScript classes,
+                        dynamic DOM creation, and UI updates that always reflect the current state.
+                    </p>
+                </div>
+
+                 <!--PROJECT HIGHLIGHTS BOX-->
+                <div class="col-span-full m-col-span-12 l-col-span-5 hero-card">
+                    <h2>Project Highlights</h2>
+                    <ul>
+                        <li>Reusable Counter class</li>
+                        <li>State-driven interface updates</li>
+                        <li>Multiple counters on one page</li>
+                        <li>StepCounter subclass with custom step values</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+         <!--OVERVIEW-->
+        <section id="overview" class="content-section">
+            <div class="grid-con">
+                <div class="col-span-full m-col-span-12 l-col-span-4">
+                    <p class="section-label">Overview</p>
+                    <h2>What the Counter class does</h2>
+                </div>
+
+                <div class="col-span-full m-col-span-12 l-col-span-8">
+                    <p>
+                        The <strong>Counter</strong> class creates a reusable UI component that builds its own
+                        display and control buttons directly inside a selected container. Each counter instance
+                        stores its own count value and updates its interface whenever that value changes.
+                    </p>
+                    <p>
+                        The component solves the problem of repeating the same counter markup and logic multiple times.
+                        Instead of writing each counter manually in HTML, a new counter can be created with a selector
+                        and an optional starting value.
+                    </p>
+                    <p>
+                        It also demonstrates state-driven UI behavior by visually changing the decrement and reset
+                        buttons when the count reaches zero.
+                    </p>
+                </div>
+
+                <div class="col-span-full m-col-span-12 l-col-span-4 overview-subheading">
+                    <h2>What problem it solves</h2>
+                </div>
+
+                <div class="col-span-full m-col-span-12 l-col-span-8">
+                    <p>
+                        Without a reusable class, every counter would need its own hard-coded markup, event listeners,
+                        and update logic. This project packages all of that into a single component so the same logic
+                        can be reused multiple times on the page with different starting values.
+                    </p>
+                    <p>
+                        The <strong>StepCounter</strong> subclass extends that base behavior and shows how the same
+                        component can be customized through inheritance and polymorphism.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+         <!--HOW TO USE IT-->
+        <section id="how-to-use" class="content-section">
+            <div class="grid-con">
+                <div class="col-span-full m-col-span-12 l-col-span-4">
+                    <p class="section-label">How To Use It</p>
+                    <h2>Set up the component step by step</h2>
+                </div>
+
+                <div class="col-span-full m-col-span-12 l-col-span-8">
+                    <article class="doc-block">
+                        <h3>Step 1: Add empty containers in your HTML</h3>
+                        <p>
+                            The counter UI is not written directly in HTML. Your JavaScript class creates the display
+                            and buttons inside a container, so each counter instance only needs an empty container div.
+                        </p>
+
+        <pre><code>&lt;div id="counter-container1" class="counter demo-card"&gt;&lt;/div&gt;
+        &lt;div id="counter-container2" class="counter demo-card"&gt;&lt;/div&gt;
+        &lt;div id="counter-container3" class="counter demo-card"&gt;&lt;/div&gt;
+        &lt;div id="counter-container4" class="counter demo-card"&gt;&lt;/div&gt;</code></pre>
+
+                        <p>
+                            Each id must match the selector passed into the JavaScript constructor.
+                        </p>
+                    </article>
+
+                    <article class="doc-block">
+                        <h3>Step 2: Import the classes in <code>main.js</code></h3>
+                        <p>
+                            Your project exports both the base <code>Counter</code> class and the
+                            <code>StepCounter</code> subclass from the same module file.
+                        </p>
+
+        <pre><code>import { Counter } from "./modules/counter.js";
+        import { StepCounter } from "./modules/counter.js";</code></pre>
+                    </article>
+
+                    <article class="doc-block">
+                        <h3>Step 3: Create standard Counter instances</h3>
+                        <p>
+                            The base <code>Counter</code> constructor accepts two values:
+                        </p>
+                        <ul>
+                            <li><strong>selector</strong> — the container where the component mounts</li>
+                            <li><strong>initialValue</strong> — the starting count value</li>
+                        </ul>
+
+        <pre><code>const counter1 = new Counter("#counter-container1", 0);
+        const counter2 = new Counter("#counter-container2", 6);
+        const counter3 = new Counter("#counter-container3", 8);</code></pre>
+
+                        <p>
+                            In your current setup:
+                        </p>
+                        <ul>
+                            <li><strong>counter1</strong> starts at 0</li>
+                            <li><strong>counter2</strong> starts at 6</li>
+                            <li><strong>counter3</strong> starts at 8</li>
+                        </ul>
+                    </article>
+
+                    <article class="doc-block">
+                        <h3>Step 4: Create a StepCounter instance</h3>
+                        <p>
+                            The <code>StepCounter</code> extends <code>Counter</code> and accepts a third parameter:
+                            <code>step</code>. This changes how much the count increases or decreases each time
+                            a button is clicked.
+                        </p>
+
+        <pre><code>const counter4 = new StepCounter("#counter-container4", 5, 10);</code></pre>
+
+                        <p>
+                            This means:
+                        </p>
+                        <ul>
+                            <li><strong>"#counter-container4"</strong> is the container selector</li>
+                            <li><strong>5</strong> is the starting count</li>
+                            <li><strong>10</strong> is the step value</li>
+                        </ul>
+
+                        <p>
+                            So the count changes like this:
+                        </p>
+
+        <pre><code>Start: 5
+        Increment: 15 → 25 → 35
+        Decrement: 25 → 15 → 5 → 0</code></pre>
+
+                        <p>
+                            If the step value is larger than the remaining count, the class clamps the result back
+                            to 0 so the counter never goes negative.
+                        </p>
+                    </article>
+
+                    <article class="doc-block">
+                        <h3>Step 5: Understand how the UI is created</h3>
+                        <p>
+                            Inside the <code>mount()</code> method, the class selects the container and dynamically
+                            creates the counter interface.
+                        </p>
+
+        <pre><code>this.display = document.createElement("div");
+        this.incrementButton = document.createElement("button");
+        this.decrementButton = document.createElement("button");
+        this.resetButton = document.createElement("button");</code></pre>
+
+                        <p>
+                            The buttons are then appended into the selected container and connected to the class methods
+                            through event listeners.
+                        </p>
+                    </article>
+
+                    <article class="doc-block">
+                        <h3>Step 6: Understand how the UI updates</h3>
+                        <p>
+                            Every time the count changes, the class calls <code>update()</code>. This method handles
+                            both the visible number and the inactive state of the buttons.
+                        </p>
+
+        <pre><code>update() {
+        this.display.textContent = `Count: ${this.count}`;
+
+        this.decrementButton.classList.toggle("inactive", this.count === 0);
+        this.resetButton.classList.toggle("inactive", this.count === 0);
+        }</code></pre>
+
+                        <p>
+                            When the count reaches 0, the decrement and reset buttons receive the
+                            <code>inactive</code> class so the UI clearly reflects the current state.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+          <!--COUNTER EXAMPLES-->
+        <section id="examples" class="content-section">
+            <div class="grid-con">
+                <div class="col-span-full">
+                    <p class="section-label">Examples</p>
+                    <h2>Live Demo</h2>
+                    <p class="section-intro">
+                        Four counters are mounted dynamically below using the current JavaScript module setup.
+                    </p>
+                </div>
+
+                <div id="counter-container1" class="counter demo-card col-span-full m-col-span-6"></div>
+                <div id="counter-container2" class="counter demo-card col-span-full m-col-span-6"></div>
+                <div id="counter-container3" class="counter demo-card col-span-full m-col-span-6"></div>
+                <div id="counter-container4" class="counter demo-card col-span-full m-col-span-6"></div>
+            </div>
+        </section>
+    </main>
+
+      <!--FOOTER-->
+    <footer class="site-footer">
+        <div class="grid-con">
+            <div class="col-span-full">
+                <p class="footer-credit">© Designed and Developed by Linh Nguyen</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>

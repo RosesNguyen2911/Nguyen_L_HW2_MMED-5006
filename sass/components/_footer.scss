@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.site-footer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 2px solid rgba(239, 165, 0, 0.18);
+    background: linear-gradient(180deg, #111635, $color-dark-blue);
+}
+
+.footer-credit {
+    color: white;
+    text-align: center;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    opacity: 0.92;
+}
